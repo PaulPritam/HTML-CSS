@@ -1,0 +1,64 @@
+.headerContainer
+{
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    background: khaki;
+    font-weight: bold;
+    padding: 30px;
+}
+.footer {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    background: khaki;
+    font-weight: bold;
+    padding: 10px;
+}
+.mainContainer {
+    display: flex;
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center;
+}
+
+html{
+    background:white;
+}
+
+.mainContentItem {
+    flex: 3 0px;
+    text-align: left;
+    order: 1;
+}
+
+article
+{
+    padding: 18px;
+    margin: 10px;
+       
+}
+
+h2{
+    color: burlywood;
+    text-align: center;
+}
+p{
+    text-align: left;
+}
+
+.CenterItem {
+    order: 2;
+    background: beige;
+    display: flex;  
+    flex: 0 0 20vw;  
+}
+
+.sideBarRightItem {
+    order: 3;
+    background: yellowgreen;
+}
+
+.sideBarItem {
+    flex: 1 0 0;
+}
