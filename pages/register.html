@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register User</title>
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+
+<body>
+    <form action="" onsubmit="handleOnSubmit()">
+        <header class="headerContainer">
+            <h1> HTML 5 Form Input Fields</h1>
+        </header>
+        <div>
+            <label for="text">Text input type for name</label>
+            <input type="text" id="text" name="text" placeholder=" Enter Name">
+            <error-output class="text-error" for="text"></error-output>
+        </div>
+
+        <div>
+            <label for="pwd">Password input type</label>
+            <input type="Password" name="pwd" id="pwd" placeholder="Password ">
+        </div>
+
+        <div>
+            <label for="email">Email input type</label>
+            <input type="email" name="email" id="email" placeholder="email">
+        </div>
+
+        <div>
+            <label for="url">URL input type</label>
+            <input type="url" name="url" id="url" placeholder="URL">
+        </div>
+
+        <div>
+            <label for="number">Ph.no input type</label>
+            <input type="number" name="number" id="number" placeholder="Ph.no.">
+        </div>
+
+        <div>
+            <label for="tel">Enter telephone number</label>
+            <input type="number" name="Telephone Number" id="Telephone Number" placeholder="Telephone Number" required>
+        </div>
+
+        <div>
+            <label for="search">Search</label>
+            <input type="Search " name="search" id="search" placeholder="search text" required>
+        </div>
+
+        <div class="nativeDateTimePicker">
+            <label for="startDate">Choose date and time</label>
+            <input type="datetime-local" id="startDate" name="startDate">
+            <span class="validity"></span>
+        </div>
+
+        <div><label for="salary">Choose output salary</label>
+            <input type="range" name="salary" id="salary" min="300000" max="500000" ste="100" value="400000">
+            <output class="salary-output" for="salary">400000</output>
+        </div>
+        <div>
+            <button type ="Submit"> Submit</button>
+        </div>
+
+    </form>
+
+
+    <script>
+        const text = document.querySelector("#text");
+        const textError = document.querySelector('.text-error');
+        text.addEventListener('input', function(){
+            let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+            if(nameRegex.test(text.value))
+            {
+                textError.textContent="";
+            }
+            else {
+                textError.textContent="Incorrect Name";
+
+            }
+
+        });
+        const salary = document.querySelector('#salary');
+        const output = document.querySelector('.salary-output');
+        salary.addEventListener('input',function()
+        {
+                output.textContent = salary.value;
+        });
+        function handleOnSubmit()
+        {
+            alert('Thanks ' +text.value);
+        }
+    </script>
+</body>
+
+</html>
